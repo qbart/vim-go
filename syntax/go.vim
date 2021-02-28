@@ -251,8 +251,15 @@ hi def link     goTodo              Todo
 
 syn match goVarArgs /\.\.\./
 
+syn match goParens /[{}()]/
+
 " Operators;
 if go#config#HighlightOperators()
+  " match index operator []
+  syn match goOperator /[\[\]]/
+
+  syn match goOperator /[,\.:]/
+
   " match single-char operators:          - + % < > ! & | ^ * =
   " and corresponding two-char operators: -= += %= <= >= != &= |= ^= *= ==
   syn match goOperator /[-+%<>!&|^*=]=\?/
